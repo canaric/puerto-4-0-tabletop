@@ -706,7 +706,7 @@ export default function Home() {
                   <p className="section-label">CLAVE DE EVALUACIÓN</p>
                   <p className="mt-3 text-sm leading-relaxed text-slate-300">
                     {selected !== undefined
-                      ? current.choices[selected].impact
+                      ? current.choices?.[selected]?.impact
                       : "La clave aparece después de registrar la decisión."}
                   </p>
                 </div>
