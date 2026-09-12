@@ -1,0 +1,355 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+:root {
+  --background: #07111b;
+  --foreground: #e8f0f6;
+  --card: #0b1926;
+  --card-foreground: #e8f0f6;
+  --popover: #0b1926;
+  --popover-foreground: #e8f0f6;
+  --primary: #6ee7f2;
+  --primary-foreground: #06101a;
+  --secondary: #122536;
+  --secondary-foreground: #e8f0f6;
+  --muted: #122536;
+  --muted-foreground: #8ca0b2;
+  --accent: #123044;
+  --accent-foreground: #e8f0f6;
+  --destructive: #ef5555;
+  --border: #244052;
+  --input: #244052;
+  --ring: #6ee7f2;
+  --radius: 0.3rem;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #07111b;
+  color: #e8f0f6;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.font-display {
+  font-family: "Arial Narrow", Impact, Haettenschweiler, sans-serif;
+}
+.landing {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 16, 26, 0.97) 0%,
+      rgba(6, 16, 26, 0.9) 48%,
+      rgba(6, 16, 26, 0.55) 100%
+    ),
+    url("/media/portada.webp") center / cover no-repeat;
+}
+.harbor-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.17;
+  background-image:
+    linear-gradient(rgba(110, 231, 242, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(110, 231, 242, 0.16) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: linear-gradient(to right, transparent 0, black 55%, transparent);
+}
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px #b9cad6;
+}
+.section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #71889b;
+}
+.scenario-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, #102536 0%, #0a1723 58%, #101b25 100%);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+}
+.scanline {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.08;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    #6ee7f2 4px
+  );
+}
+.media-frame {
+  position: relative;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: #02070b;
+}
+.media-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(7, 17, 27, 0.55), transparent 38%);
+}
+.media-label {
+  position: absolute;
+  z-index: 3;
+  right: 14px;
+  bottom: 12px;
+  border: 1px solid rgba(110, 231, 242, 0.35);
+  background: rgba(5, 16, 24, 0.78);
+  padding: 5px 8px;
+  color: #a8edf3;
+  font-family: monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  backdrop-filter: blur(6px);
+}
+.audio-control {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(110, 231, 242, 0.2);
+  background: rgba(110, 231, 242, 0.06);
+  padding: 5px 8px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+}
+.audio-button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #a8edf3;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.audio-slider {
+  width: 74px;
+  accent-color: #6ee7f2;
+}
+.maturity-panel {
+  margin-top: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+}
+.maturity-track {
+  position: relative;
+  height: 20px;
+  margin-top: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(
+    90deg,
+    #ef4444 0 39%,
+    #f97316 39% 59%,
+    #eab308 59% 79%,
+    #22d3ee 79% 94%,
+    #22c55e 94% 100%
+  );
+}
+.maturity-fill {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.52);
+  mix-blend-mode: overlay;
+}
+.maturity-needle {
+  position: absolute;
+  top: -8px;
+  width: 3px;
+  height: 34px;
+  transform: translateX(-2px);
+  background: white;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+}
+.maturity-labels {
+  display: grid;
+  grid-template-columns: 39fr 20fr 20fr 15fr 6fr;
+  margin-top: 8px;
+  color: #8195a5;
+  font-family: monospace;
+  font-size: 0.54rem;
+}
+.maturity-labels span:not(:first-child) {
+  text-align: center;
+}
+.maturity-labels span:last-child {
+  text-align: right;
+}
+.intel-strip {
+  display: flex;
+  min-height: 64px;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 13px 0;
+}
+.intel-strip span {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: #6ee7f2;
+}
+.intel-strip p {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: #a9bac7;
+}
+.domain-chip {
+  border-width: 1px;
+  padding: 5px 9px;
+  font-family: monospace;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+.timeline-item {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 8px;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 9px 10px;
+  text-align: left;
+  font-size: 0.72rem;
+  color: #61778a;
+  transition: 0.2s;
+}
+.timeline-item span:first-child {
+  font-family: monospace;
+}
+.timeline-item.active {
+  border-left-color: #6ee7f2;
+  background: rgba(110, 231, 242, 0.07);
+  color: #dfeef5;
+}
+.timeline-item.past {
+  color: #96a8b7;
+}
+.timeline-item:disabled {
+  cursor: default;
+}
+.choice {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background: rgba(255, 255, 255, 0.025);
+  padding: 13px 15px;
+  color: #dbe7ee;
+  transition: 0.18s;
+}
+.choice:not(:disabled):hover {
+  transform: translateX(3px);
+  border-color: rgba(110, 231, 242, 0.55);
+  background: rgba(110, 231, 242, 0.06);
+}
+.choice.chosen {
+  border-color: #6ee7f2;
+  background: rgba(110, 231, 242, 0.09);
+}
+.choice:disabled:not(.chosen) {
+  opacity: 0.45;
+}
+.choice-index {
+  display: flex;
+  height: 29px;
+  width: 29px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: monospace;
+  font-size: 0.72rem;
+}
+.control-panel {
+  position: sticky;
+  top: 88px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0b1926;
+  padding: 20px;
+}
+.role-card {
+  display: flex;
+  gap: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.025);
+  padding: 15px;
+}
+.role-card > span {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: #6ee7f2;
+}
+.role-card h3 {
+  font-weight: 700;
+}
+.role-card p {
+  margin-top: 5px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #91a4b3;
+}
+@media (max-width: 1023px) {
+  .control-panel {
+    position: static;
+  }
+}
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .scenario-card,
+  .control-panel {
+    box-shadow: none;
+  }
+  .audio-control {
+    display: none;
+  }
+  .maturity-panel {
+    border-color: #222;
+  }
+  .maturity-track {
+    print-color-adjust: exact;
+  }
+}
