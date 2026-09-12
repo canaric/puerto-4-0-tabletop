@@ -88,7 +88,7 @@ const injects: Inject[] = [
     domain: "MANDO",
     title: "Normalidad operativa",
     subtitle: "Línea de base",
-    image: "/media/normalidad.webp",
+    image: "/puerto-4-0-tabletop/media/normalidad.webp",
     situation:
       "La Terminal Portuaria Multipropósito opera al 96 % de su capacidad. Grúas pórtico, control de accesos, sistema de gestión de terminal y red OT funcionan sin alertas críticas. Arriba un buque con carga sensible en 90 minutos.",
     intel: [
@@ -102,8 +102,8 @@ const injects: Inject[] = [
     domain: "CIBER",
     title: "Pérdida de control industrial",
     subtitle: "Inyección 01",
-    image: "/media/ransomware.webp",
-    video: "/media/ransomware-scada.mp4",
+    image: "/puerto-4-0-tabletop/media/ransomware.webp",
+    video: "/puerto-4-0-tabletop/media/ransomware-scada.mp4",
     situation:
       "El SOC informa cifrado de servidores de supervisión y pérdida de telemetría de dos grúas. La nota exige 50 XMR y utiliza retórica extremista. No se confirmó compromiso de los PLC ni la identidad del actor.",
     intel: [
@@ -117,8 +117,8 @@ const injects: Inject[] = [
     domain: "COGNITIVO",
     title: "Video falso de evacuación",
     subtitle: "Inyección 02",
-    image: "/media/deepfake.webp",
-    video: "/media/deepfake-viral.mp4",
+    image: "/puerto-4-0-tabletop/media/deepfake.webp",
+    video: "/puerto-4-0-tabletop/media/deepfake-viral.mp4",
     situation:
       "Un video hiperrealista atribuido a una autoridad naval anuncia una amenaza biológica y ordena evacuar. Se viraliza en redes y algunos medios lo replican sin verificación. Las rutas de acceso comienzan a congestionarse.",
     intel: [
@@ -132,8 +132,8 @@ const injects: Inject[] = [
     domain: "FÍSICO",
     title: "Drones sobre zona energética",
     subtitle: "Inyección 03",
-    image: "/media/drones.webp",
-    video: "/media/enjambre-drones.mp4",
+    image: "/puerto-4-0-tabletop/media/drones.webp",
+    video: "/puerto-4-0-tabletop/media/enjambre-drones.mp4",
     situation:
       "Se detectan seis vehículos aéreos no tripulados a baja altura próximos a tanques de combustible. No se observa carga útil. Seguridad solicita una decisión inmediata y recuerda el riesgo de caída sobre infraestructura crítica.",
     intel: [
@@ -147,7 +147,7 @@ const injects: Inject[] = [
     domain: "MANDO",
     title: "Triaje multidominio",
     subtitle: "Decisión 01",
-    image: "/media/crisis-room.webp",
+    image: "/puerto-4-0-tabletop/media/crisis-room.webp",
     situation:
       "Tres incidentes simultáneos compiten por recursos. El comité debe distinguir hechos, hipótesis y desinformación, establecer mando y asignar esfuerzos.",
     intel: [
@@ -191,7 +191,7 @@ const injects: Inject[] = [
     domain: "CIBER",
     title: "Contención de la red OT",
     subtitle: "Decisión 02",
-    image: "/media/contencion.webp",
+    image: "/puerto-4-0-tabletop/media/contencion.webp",
     situation:
       "Se confirma propagación lateral desde un servidor de ingeniería hacia estaciones HMI. Los controladores mantienen lógica local segura. La red de emergencias comparte infraestructura física, pero está segmentada.",
     intel: [
@@ -237,7 +237,7 @@ const injects: Inject[] = [
     domain: "FÍSICO",
     title: "Respuesta contra UAS",
     subtitle: "Decisión 03",
-    image: "/media/antidron.webp",
+    image: "/puerto-4-0-tabletop/media/antidron.webp",
     situation:
       "Los drones mantienen patrón de espera. El análisis espectral sugiere control remoto, pero se desconoce su lógica de failsafe. La autoridad competente dispone de capacidades C-UAS autorizadas.",
     intel: [
@@ -282,7 +282,7 @@ const injects: Inject[] = [
     domain: "LEGAL",
     title: "Atribución y respuesta transfronteriza",
     subtitle: "Decisión 04",
-    image: "/media/crisis-room.webp",
+    image: "/puerto-4-0-tabletop/media/crisis-room.webp",
     situation:
       "Inteligencia vincula el C2 a infraestructura alojada en el exterior. La IP por sí sola no prueba autoría. El CSIRT propone neutralizar el canal sin intrusión ofensiva y solicitar preservación de datos.",
     intel: [
@@ -328,7 +328,7 @@ const injects: Inject[] = [
     domain: "RECUPERACIÓN",
     title: "Restauración y narrativa",
     subtitle: "Decisión 05",
-    image: "/media/resolucion.webp",
+    image: "/puerto-4-0-tabletop/media/resolucion.webp",
     situation:
       "Las funciones mínimas están estabilizadas. Persisten rumores y presión comercial para volver al 100 %. El equipo forense aún valida integridad y el origen inicial sigue en investigación.",
     intel: [
@@ -928,7 +928,7 @@ function Debrief({
     <main className="min-h-screen bg-[#07111b] px-5 py-8 text-slate-100 print:bg-white print:text-black">
       <div className="mx-auto max-w-5xl">
         <Image
-          src="/media/debrief.webp"
+          src="/puerto-4-0-tabletop/media/debrief.webp"
           alt="Centro de coordinación durante el análisis posterior al ejercicio"
           width={2560}
           height={1440}
@@ -1208,7 +1208,7 @@ function SoundControl() {
     <div className="audio-control">
       <audio
         ref={audioRef}
-        src="/media/ambiente-tension.mp3"
+        src="/puerto-4-0-tabletop/media/ambiente-tension.mp3"
         loop
         preload="metadata"
       />
